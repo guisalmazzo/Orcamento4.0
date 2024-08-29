@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+        body {
+
+            font-family: 'Times New Roman', Times, serif;
+            background-image: linear-gradient(45deg, cyan, yellow);
+        }
+
+        div {
+            background-color: rgba(0, 0, 0, 0.9);
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 80px;
+            border-radius: 20px;
+            color: white;
+        }
+
+        input {
+            padding: 15px;
+            border: none;
+            outline: none;
+            font-size: 15px;
+        }
+
+        input[type="submit"] {
+            background-color: dodgerblue;
+            padding: 15px;
+            width: 100%;
+            border: none;
+            border-radius: 10px;
+            color: white;
+            font-size: 15px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: deepskyblue;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div>
+        <h1>Login</h1>
+        <input type="text" placeholder="Login" id="login">
+        <br><br>
+        <input type="password" placeholder="Senha" id="senha">
+        <br><br>
+        <input type="submit" value="Entrar" onclick="logar(); return false">
+    </div>
+
+    <script>
+        function logar() {
+            var login = document.getElementById('login').value;
+            var senha = document.getElementById('senha').value;
+
+            if (login == "admin" && senha == "admin") {
+                location.href = "homepage.html";
+            }
+            else {
+                alert("Usuário ou senha invalido");
+            }
+        }
+    </script>
+</body>
+
+</html>
